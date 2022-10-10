@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
+import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -135,7 +135,7 @@ export class FetchApiDataService {
  public updateUser(userDetails: any): Observable<any> {
    const token = localStorage.getItem('token');
    const username = localStorage.getItem('user');
-   return this.http.put(apiUrl + 'users/:Username', userDetails, {headers: new HttpHeaders(
+   return this.http.put(apiUrl + `users/${username}`, userDetails, {headers: new HttpHeaders(
      {
        Authorization: 'Bearer ' + token
      })}).pipe(
@@ -148,7 +148,7 @@ export class FetchApiDataService {
  public removeUser(userDetails: any): Observable<any> {
    const token = localStorage.getItem('token');
    const username = localStorage.getItem('user');
-   return this.http.delete(apiUrl + 'users/' + username, userDetails, {headers: new HttpHeaders(
+   return this.http.delete(apiUrl + `users/${username}`, {headers: new HttpHeaders(
      {
        Authorization: 'Bearer ' + token
      })}).pipe(
@@ -171,7 +171,7 @@ export class FetchApiDataService {
    );
  }
 
- private extractResponseData(res: Response): any {
+ private extractResponseData(res: any): any {
    const body = res;
    return body || {};
  }
