@@ -1,0 +1,44 @@
+.main-page {
+  background-color: #CCCCFF;
+}
+
+.movie-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 10px;
+}
+
+.movie-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  width: 280px;
+  position: relative;
+  box-shadow: 15px 10px 10px #AB95E8;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.movie-img {
+  object-fit: contain;
+}
+
+.movie-actions {
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.add-btn, .remove-btn {
+  color: #95A9E8;
+}
