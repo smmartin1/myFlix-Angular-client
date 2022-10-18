@@ -32,8 +32,7 @@ export class UserRegistrationFormComponent implements OnInit {
      this.snackBar.open(result, 'OK', {duration: 2000});
     }, (result) => {
       console.log(result);
-      alert('Welcome to myFlix!');
-      this.snackBar.open(result, 'OK', {duration: 2000});
+      this.snackBar.open('Welcome to myFlix!', 'OK', {duration: 2000});
     });
   }
 }
