@@ -1,0 +1,24 @@
+.director-view {
+  display: flex;
+}
+
+.director-card{
+  box-shadow: none;
+}
+
+.director-name {
+  margin-bottom: 5px;
+  justify-content: center;
+  display: flex;
+  text-decoration: underline;
+}
+
+.director-action {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+}
+
+.director-button{
+  color: #95A9E8;
+}
