@@ -1,0 +1,24 @@
+.genre-view {
+  display: flex;
+}
+
+.genre-card{
+  box-shadow: none;
+}
+
+.genre-name {
+  margin-bottom: 5px;
+  justify-content: center;
+  display: flex;
+  text-decoration: underline;
+}
+
+.genre-action {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+}
+
+.genre-button{
+  color: #95A9E8;
+}
