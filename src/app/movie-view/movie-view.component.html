@@ -1,0 +1,18 @@
+<div class="movie-view">
+  <mat-card class="movie-card">
+    <mat-card-header class="movie-title">
+      <mat-card-title>{{data.Title}}</mat-card-title>
+    </mat-card-header>
+    <mat-dialog-content><b>Synopsis:</b> {{data.Description}}</mat-dialog-content>
+    <mat-card-actions class="movie-action">
+      <button
+        mat-button
+        mat-dialog-close
+        class="movie-button"
+        color="primary"
+      >
+        Close
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
