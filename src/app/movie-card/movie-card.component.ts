@@ -26,6 +26,11 @@ export class MovieCardComponent implements OnInit {
     this.getFavoriteMovie();
   }
 
+  /**
+   * Get all movies from database
+   * @returns an array of all movies
+   * @function getMovies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -34,6 +39,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Displays a movie synopsis
+   * @param title
+   * @param description
+   */
   openMovieViewComponent(title: string, description: string): void {
     this.dialog.open(MovieViewComponent, {
       data: {
@@ -44,6 +54,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Displays a movie director bio
+   * @param name
+   * @param bio
+   * @param birthday
+   */
   openDirectorViewComponent(name: string, bio: string, birthday: Date): void {
     this.dialog.open(DirectorViewComponent, {
       data: {
@@ -55,6 +71,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Displays a movie director bio
+   * @param name
+   * @param description
+   */
   openGenreViewComponent(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: {
@@ -65,6 +86,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Get all favorite movies from database
+   * @returns an array of all favorite movies
+   * @function getFavoriteMovie
+   */
   getFavoriteMovie(): void {
     this.fetchApiData.getFavoriteMovie().subscribe((resp: any) => {
       this.favoriteMovies = resp;
@@ -73,10 +99,20 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Check if a movie is a favorite
+   * @param id
+   * @returns a boolean on whether a movie is a favorite or not
+   */
   isFavorite(id: string): boolean {
     return this.favoriteMovies.includes(id);
   }
 
+  /**
+   * Add a movie to favorites
+   * @param id
+   * @function addFavoriteMovie
+   */
   addFavoriteMovie(id: string): void {
     console.log(id);
     console.log('Movie was added to favorites');
@@ -85,6 +121,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Remove a movie remove favorites
+   * @param id
+   * @function addFavoriteMovie
+   */
   removeFavoriteMovie(id: string): void {
     console.log(id);
     console.log('Movie was removed from favorites');
